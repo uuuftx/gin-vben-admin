@@ -11,8 +11,11 @@ func SetupRouter() *gin.Engine {
 	// 注册路由
 	apiV1 := r.Group("/api/v1")
 	{
+		// 用户模块
 		apiV1.GET("/users", v1.GetUsers)
 		apiV1.POST("/users", v1.CreateUser)
+
+		//
 	}
 
 	return r
