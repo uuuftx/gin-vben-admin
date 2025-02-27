@@ -79,3 +79,21 @@ func DeleteUser(id uint) error {
 	}
 	return nil
 }
+
+// FindUserByUsername 根据用户名查找用户
+func FindUserByUsername(username string) (*models.SysUser, error) {
+	var user models.SysUser
+	if err := db.DB.Where("user_name = ?", username).First(&user).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
+}
+
+// FindUserByUserId 根据用户名查找用户
+func FindUserByUserId(userid string) (*models.SysUser, error) {
+	var user models.SysUser
+	if err := db.DB.Where("user_id = ?", userid).First(&user).Error; err != nil {
+		return nil, err
+	}
+	return &user, nil
+}

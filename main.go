@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/uuuftx/gin-vben-admin/config"
 	"github.com/uuuftx/gin-vben-admin/db"
+	middlewares "github.com/uuuftx/gin-vben-admin/middleware"
 	"github.com/uuuftx/gin-vben-admin/router"
 )
 
@@ -25,6 +26,9 @@ func main() {
 
 	// 初始化路由
 	r := router.SetupRouter()
+
+	// 全局使用 AuthMiddleware 中间件
+	r.Use(middlewares.AuthMiddleware())
 
 	// 启动服务器
 	err = r.Run(fmt.Sprintf(":%d", cfg.Server.Port))

@@ -19,7 +19,7 @@ func Success(c *gin.Context, data interface{}) {
 
 // Error 错误响应
 func Error(c *gin.Context, code int, message string) {
-	c.JSON(code, Response{
+	c.JSON(200, Response{
 		Code:    code,
 		Data:    nil,
 		Message: message,

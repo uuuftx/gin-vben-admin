@@ -12,10 +12,11 @@ func SetupRouter() *gin.Engine {
 	apiV1 := r.Group("/api/v1")
 	{
 		// 用户模块
-		apiV1.GET("/users", v1.GetUsers)
-		apiV1.POST("/users", v1.CreateUser)
+		apiV1.GET("/user/info", v1.GetUser)
+		apiV1.GET("/auth/codes", v1.AuthCode)
 
-		//
+		//登录模块
+		apiV1.POST("/auth/login", v1.Login)
 	}
 
 	return r

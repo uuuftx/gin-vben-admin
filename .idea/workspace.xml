@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d51b7a8-ef14-4a52-b083-61f5c754100f" name="更改" comment="新建项目">
-      <change afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/db/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/sys_user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/utils.go" afterDir="false" />
+    <list default="true" id="0d51b7a8-ef14-4a52-b083-61f5c754100f" name="更改" comment="完善user接口">
+      <change afterPath="$PROJECT_DIR$/api/v1/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/auth_middleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/jwt_util.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/v1/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/v1/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/response.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新建项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="新建项目" />
+    <MESSAGE value="完善user接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完善user接口" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

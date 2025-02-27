@@ -1,6 +1,7 @@
 package v1
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	models "github.com/uuuftx/gin-vben-admin/model"
 	"github.com/uuuftx/gin-vben-admin/service"
@@ -19,6 +20,38 @@ func GetUsers(c *gin.Context) {
 
 	// 如果查询成功，返回用户列表
 	utils.Success(c, users)
+}
+
+func GetUser(c *gin.Context) {
+	// 从上下文中获取用户信息
+
+	claims, err := utils.GetUserInfo(c.GetHeader("Authorization"))
+	if err != nil {
+		utils.Error(c, 100, err.Error())
+	}
+
+	fmt.Println("GetUser", claims.UserID)
+
+	user, err := service.FindUserByUserId(claims.UserID)
+	if err != nil {
+		utils.Error(c, 100, err.Error())
+	}
+
+	if user == nil {
+		utils.Error(c, 100, "没有此用户")
+	}
+	utils.Success(c, gin.H{
+		"username": user.UserName,
+		"userId":   user.UserID,
+		"realName": user.RealName,
+		"avatar":   user.Avatar,
+		"homePath": user.HomePath,
+		"roles":    []string{},
+	})
+}
+
+func AuthCode(c *gin.Context) {
+	utils.Success(c, []string{})
 }
 
 // CreateUser 接收用户数据并调用服务层创建用户
