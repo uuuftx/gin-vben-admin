@@ -17,6 +17,9 @@ func SetupRouter() *gin.Engine {
 
 		//登录模块
 		apiV1.POST("/auth/login", v1.Login)
+
+		// 菜单模块
+		apiV1.GET("/menu/all", v1.GetMenuTree)
 	}
 
 	return r
